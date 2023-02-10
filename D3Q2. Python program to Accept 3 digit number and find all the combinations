@@ -1,0 +1,15 @@
+def comb(L):
+    if L<0:
+     print("Enter only positive numbers")
+     return
+    L=str(L)
+    if (len(L)-2)!=3:
+     print("Enter only 3 digits")
+    else: 
+     for i in range(3):
+    	 for j in range(3):
+    		 for k in range(3):
+    			 if (i!=j and j!=k and i!=k):
+    				 print(L[i], L[j], L[k])
+L=float(input("Enter a 3 digit number: "))
+comb(L)
