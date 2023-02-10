@@ -1,0 +1,12 @@
+def mirror_image(num):
+    return int(str(num)[::-1])
+
+while True:
+    number_str = input("Enter a number: ")
+    if number_str.isdigit():
+        number = int(number_str)
+        break
+    print("Invalid input. Please enter a valid number.")
+    exit()
+
+print("Mirror image of the number:", mirror_image(number))
