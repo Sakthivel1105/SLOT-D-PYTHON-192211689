@@ -1,0 +1,10 @@
+def goodpairs(num):
+    count=0
+    n=len(num)
+    for i in range(n):
+        for j in range(i+1,n):
+            if num[i]==num[j]and i<j:
+                count+=1
+    return count
+num=list(input("Enter an array of numbers: ").split(","))
+print(goodpairs(num))
