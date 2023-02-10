@@ -1,0 +1,22 @@
+T=int(input("Enter time T: "))
+print("Enter the number of guests entering:\n")
+N1 = int(input("Enter number of elements in the list:"))
+E = []
+for i in range(0, N1):
+    ele1 = int(input("Enter element: "))  
+    E.append(ele1)     
+print("E= ",E)
+print("Enter the number of guests leaving:\n")
+N2 = int(input("Enter number of elements in the list:"))
+L = []
+for i in range(0, N2):
+    ele1 = int(input("Enter element: "))  
+    L.append(ele1)     
+print("L= ",L)
+present=0
+Total_guests=0
+for i in range(T):
+    present+=E[i]-L[i]
+    if Total_guests<present:
+        Total_guests=present
+print("Maximum number of guests on cruise at an instance= ",Total_guests,end=' ')
