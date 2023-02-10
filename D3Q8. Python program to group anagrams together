@@ -1,0 +1,13 @@
+class Solve():
+   def Anagrams( self, li ):
+       dict = {}
+       for word in li:
+           sortedWord = ''.join(sorted(word))
+           if sortedWord not in dict:
+               dict[sortedWord] = [word]
+           else:
+               dict[sortedWord] += [word]
+       return [dict[i] for i in dict]
+if __name__ == '__main__':
+   li = list(map(str, input("Enter an array of strings: "). split(',')))
+   print(Solve().Anagrams(li))
