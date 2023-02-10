@@ -1,0 +1,9 @@
+def isnumeric(s):
+    s=s.strip()
+    try:
+        s=float(s)
+        return True
+    except:
+        return False
+s=input("Enter a string: ")
+print(isnumeric(s))
