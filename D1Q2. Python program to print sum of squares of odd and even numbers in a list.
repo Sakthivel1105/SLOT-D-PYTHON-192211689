@@ -1,0 +1,21 @@
+def sumsquare(L):
+    odd=0
+    even=0
+    for i in L:
+        if i%2==0:
+            even += i**2
+        else:
+            odd += i**2
+    L=[odd,even]
+    return L
+L=[]
+n=int(input("enter the size of the first list::"))
+if n<=0:
+    print("Enter a positive number ")
+else:
+    print("enter the element of first list::")
+    for i in range(int(n)):
+        k=int(input(""))
+        L.append(k)
+        print(L)
+print("Output: ",sumsquare(L))
