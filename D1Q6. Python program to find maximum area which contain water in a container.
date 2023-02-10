@@ -1,0 +1,23 @@
+class solution:
+    def maxarea(self,a):
+        maxarea=0
+        l=0
+        r=len(a)-1
+        while l<r:
+            base=r-1
+            height=min(a[l],a[r])
+            area=base*height
+            maxarea=max(area,maxarea)
+            if a[l]<a[r]:
+                l+=1
+            else:
+                r-=1
+        return maxarea
+ob=solution()
+N = int(input("Enter N:"))
+elem = []
+for i in range(0, N):
+    ele = int(input("Enter element: "))  
+    elem.append(ele)     
+print(elem)
+print(ob.maxarea(elem))
