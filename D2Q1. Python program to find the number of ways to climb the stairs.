@@ -1,0 +1,8 @@
+def fib(n):
+    if n <= 1:
+        return n
+    return fib(n-1)+fib(n-2)
+def count(s):
+    return fib(s+1)
+s=int(input("Enter number of steps: "))
+print("number of ways= ",count(s))
