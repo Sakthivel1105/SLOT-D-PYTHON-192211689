@@ -1,0 +1,14 @@
+def shuffle(l1, l2):
+    result = []
+    for i in range(max(len(l1), len(l2))):
+        if i < len(l1):
+            result.append(l1[i])
+        if i < len(l2):
+            result.append(l2[i])
+    return result
+
+if __name__ == "__main__":
+    l1 = list(map(int, input("Enter elements of list 1 (separated by spaces): ").strip().split()))
+    l2 = list(map(int, input("Enter elements of list 2 (separated by spaces): ").strip().split()))
+    result = shuffle(l1, l2)
+    print("The shuffled list is:", result)
