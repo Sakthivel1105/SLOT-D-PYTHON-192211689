@@ -1,0 +1,22 @@
+grade = input("Enter the grade of the employee (A or B): ")
+if grade != 'A' and grade != 'B':
+    print("Enter a Valid Input")
+    exit()
+
+salary = float(input("Enter the employee salary: "))
+if salary < 0:
+    print("Enter a Valid Input")
+    exit()
+
+if salary < 10000:
+    bonus = salary * 0.02
+else:
+    if grade == 'A':
+        bonus = salary * 0.05
+    else:
+        bonus = salary * 0.1
+
+print("Salary=", salary)
+print("Bonus=", bonus)
+total = salary + bonus
+print("Total to be paid $%.1f" % total)
