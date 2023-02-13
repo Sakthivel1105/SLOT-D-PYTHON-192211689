@@ -1,0 +1,29 @@
+def pascals_triangle(num_rows, row_number):
+    def binomial_coefficient(n, k):
+        result = 1
+        for i in range(1, k+1):
+            result = result * (n-i+1) / i
+        return int(result)
+  
+    pascal = []
+    for i in range(num_rows):
+        row = []
+        for j in range(i+1):
+            row.append(binomial_coefficient(i, j))
+        pascal.append(row)
+
+    print("Pascal's Triangle:")
+    for i in range(num_rows):
+        row = pascal[i]
+        print(" " * (num_rows-i), end="")
+        for j in range(i+1):
+            print(row[j], end=" ")
+        print("")
+    print("Sum of elements in ", row_number,"th row", ":", sum(pascal[row_number-1]))
+
+num_rows = int(input("Enter the number of rows: "))
+row_number =int(input("Enter the row number: "))
+if (num_rows<=0) or (row_number<=0):
+    print("Enter a positive number")
+    exit()
+pascals_triangle(num_rows, row_number)
