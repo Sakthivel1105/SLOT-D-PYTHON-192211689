@@ -1,0 +1,14 @@
+def min_swaps_to_form_chessboard(matrix):
+    n = len(matrix)
+    rows = [0] * n
+    cols = [0] * n
+    for i in range(n):
+        for j in range(n):
+            if matrix[i][j] == 1:
+                rows[i] += 1
+                cols[j] += 1
+    row_swaps = 0
+    for i in range(n):
+     else:
+         
+        print("The minimum number of swaps required to form a chessboard is:", result)
