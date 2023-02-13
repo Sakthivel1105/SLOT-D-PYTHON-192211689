@@ -1,0 +1,41 @@
+def longestSubstring(s, k):
+    if len(s) < k:
+        return 0
+
+    if not all(c.islower() for c in s):
+        return "Invalid input: the input string should contain only lowercase letters."
+
+    char_count = {}
+    for char in s:
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+
+    for char, count in char_count.items():
+        if count < k:
+            split_char = char
+            break
+    else:
+        return len(s)
+
+    start, end = 0, 0
+    longest_length = 0
+    while end < len(s):
+        if char_count[s[end]] < k:
+            end += 1
+        else:
+            start = end
+            while end < len(s) and char_count[s[end]] >= k:
+                end += 1
+            longest_length = max(longest_length, end - start)
+
+    return longest_length
+
+s = input("Enter a string: ")
+k = int(input("Enter k: "))
+result = longestSubstring(s, k)
+if isinstance(result, int):
+    print("Length of the longest substring:", result)
+else:
+    print(result)
